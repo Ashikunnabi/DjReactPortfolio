@@ -8,6 +8,10 @@
     margin-top: -1.25rem;
 }
 
+.card-body {
+    display: grid
+}
+
 .card__image{
     width: 90%;
     margin: 0 5% 0 5%;

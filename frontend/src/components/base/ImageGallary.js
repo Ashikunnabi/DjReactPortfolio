@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import { MDBRow, MDBCol } from "mdbreact";
 import Lightbox from "react-image-lightbox";
 import "../../assets/base/Lightbox.css";
 
@@ -8,20 +8,20 @@ state = {
   photoIndex: 0,
   isOpen: false,
   images: [
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(145).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(150).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(152).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(42).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(151).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(40).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(148).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(147).jpg',
-    'https://mdbootstrap.com/img/Photos/Lightbox/Original/img%20(149).jpg'
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
+    'https://images.squarespace-cdn.com/content/v1/5962fcd3bebafbc89ca399c2/1502804452401-TE2FPPRJFDW2VVC51IOB/ke17ZwdGBToddI8pDm48kGHIT0vMLcNfb7m0L42cgRUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGeoXiJxmFnNOjAW3Q5u7CeFeAgOCL2u531iTQs5I-Mjhg-dGrYyYO3FLjneeV7oB/USE+THIS+LIGHT+GRAY+BOX.jpg?format=2500w',
   ]
 }
 
 componentDidMount = () => {
-    fetch('http://localhost:8000/project/api/v1/quotes/')
+    fetch('https://ademo.pythonanywhere.com/project/api/v1/quotes/')
       .then(res => res.json())
       .then(data => {
         let tmpArray = []

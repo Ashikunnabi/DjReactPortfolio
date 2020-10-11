@@ -7,7 +7,7 @@ const Skills = () => {
   const [skills, setskills] = React.useState([]);
   
   React.useEffect(() => {
-    fetch('http://localhost:8000/project/api/v1/skills/')
+    fetch('https://ademo.pythonanywhere.com/project/api/v1/skills/')
       .then(res => res.json())
       .then(data => {
         let tmpArray = []
