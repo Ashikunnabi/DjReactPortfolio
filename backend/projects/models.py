@@ -34,6 +34,19 @@ class Quote(models.Model):
     source = models.TextField(blank=True, null=True)
     image = models.FileField()
     show_as_carousel = models.BooleanField(default=False)
+        
+class Blog(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.FileField()
+    published_date = models.DateField()
+    description = models.TextField()
+    tag = models.TextField(blank=True, null=True)
+    url = models.CharField(max_length=2000, blank=True, null=True)
+    
+    def __str__(self):
+        return self.title
+
+
     
     
     
