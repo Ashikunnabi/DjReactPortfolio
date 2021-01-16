@@ -1,7 +1,7 @@
-from backend.projects.models import Skill, Project, Quote
+from backend.projects.models import Skill, Project, Quote, Blog
 from rest_framework import viewsets
 from rest_framework import permissions
-from backend.projects.api.v1.serializers import SkillSerializer, ProjectSerializer, QuoteSerializer
+from backend.projects.api.v1.serializers import SkillSerializer, ProjectSerializer, QuoteSerializer, BlogSerializer
 from rest_framework.pagination import PageNumberPagination
 
 class StandardResultsSetPagination(PageNumberPagination):
@@ -33,3 +33,11 @@ class QuoteViewSet(viewsets.ModelViewSet):
     """
     queryset = Quote.objects.all()
     serializer_class = QuoteSerializer
+
+
+class BlogViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows blog to be viewed or edited.
+    """
+    queryset = Blog.objects.all().order_by('-id')
+    serializer_class = BlogSerializer

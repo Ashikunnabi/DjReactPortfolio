@@ -1,4 +1,4 @@
-from backend.projects.models import Skill, Project, Quote
+from backend.projects.models import Skill, Project, Quote, Blog
 from rest_framework import serializers
 
 
@@ -22,4 +22,10 @@ class ProjectSerializer(serializers.ModelSerializer):
 class QuoteSerializer(serializers.ModelSerializer):    
     class Meta:
         model = Quote
+        fields = '__all__'
+
+
+class BlogSerializer(serializers.ModelSerializer):    
+    class Meta:
+        model = Blog
         fields = '__all__'
