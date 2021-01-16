@@ -29,6 +29,9 @@ class Navbar extends Component {
                 <MDBNavItem>
                   <MDBNavLink exact to="/portfolio" activeClassName="navbar_active">Portfolio</MDBNavLink>
                 </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink exact to="/blog" activeClassName="navbar_active">Blog</MDBNavLink>
+                </MDBNavItem>
                 {/*<MDBNavItem>
                   <MDBNavLink to="/blog"activeClassName="navbar_active">Blog</MDBNavLink>
                 </MDBNavItem>
