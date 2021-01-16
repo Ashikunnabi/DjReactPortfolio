@@ -8,7 +8,7 @@ const Blog = () => {
   const storeData = [];
 
   React.useEffect(() => {
-    fetch('http://127.0.0.1:8000/project/api/v1/blogs/')
+    fetch('https://ademo.pythonanywhere.com/project/api/v1/blogs/')
       .then(res => res.json())
       .then(data => {
         setBlogs(data);
