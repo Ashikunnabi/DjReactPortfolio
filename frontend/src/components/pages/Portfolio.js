@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { MDBRow, MDBBtn } from 'mdbreact';
-
-import { Card, FrameModal } from '../base/';
+import { Card, FrameModal } from '../base/portfolio/';
 
 const Portfolio = () => {
   const [projects, setprojects] = React.useState([]);
@@ -9,7 +8,7 @@ const Portfolio = () => {
   const [seeDetail, setSeeDetail] = React.useState(null);
   const [showModal, setShowModal] = React.useState(false);
   const storeData = [];
-  
+
   React.useEffect(() => {
     fetch('https://ademo.pythonanywhere.com/project/api/v1/projects/')
       .then(res => res.json())
@@ -18,7 +17,7 @@ const Portfolio = () => {
         setNextURL(data.next);
       });
   }, []); // <-- Have to pass i
-  
+
   const showMore = () => {
     projects.map(x => storeData.push(x));
     fetch(nextURL)
@@ -30,28 +29,28 @@ const Portfolio = () => {
       })
   };
   const seeDetails = (obj) => {
-      setSeeDetail(obj);
+    setSeeDetail(obj);
   }
   const toggle = () => {
-      setShowModal(!showModal)
-   }
-  
+    setShowModal(!showModal)
+  }
+
   return (
     <Fragment >
       <div className="container-fluid Home__background_image">
         <MDBRow>
-          {!projects ? console.log(projects) : projects.map(x => <Card key={x.id} obj={x} seeProjectDetails={seeDetails} modal={toggle}/>)}      
-            
-        </MDBRow> 
-        { !nextURL ? '' : (
-            <MDBRow style={{marginTop: '20px', justifyContent: 'center'}}>
-                <MDBBtn outline color="black" onClick={showMore}><strong>MORE</strong></MDBBtn> 
-            </MDBRow>            
+          {!projects ? console.log(projects) : projects.map(x => <Card key={x.id} obj={x} seeProjectDetails={seeDetails} modal={toggle} />)}
+
+        </MDBRow>
+        {!nextURL ? '' : (
+          <MDBRow style={{ marginTop: '20px', justifyContent: 'center' }}>
+            <MDBBtn outline color="black" onClick={showMore}><strong>MORE</strong></MDBBtn>
+          </MDBRow>
         )
-        } 
-        { !showModal ? '' : (
-            <FrameModal toggleModal={toggle} obj={JSON.parse(seeDetail)} modal={9}/>
-          )
+        }
+        {!showModal ? '' : (
+          <FrameModal toggleModal={toggle} obj={JSON.parse(seeDetail)} modal={9} />
+        )
         }
       </div>
     </Fragment>

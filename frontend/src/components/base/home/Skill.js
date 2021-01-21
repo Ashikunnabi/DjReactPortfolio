@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBIcon, MDBBtn } from 'mdbreact';
 
-import '../../assets/base/style.css';
+import '../../../assets/base/style.css';
 
 const Skill = (props) => {
   return (

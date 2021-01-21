@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/base/style.css';
+import '../../../assets/base/style.css';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBView, MDBIcon } from 'mdbreact';
 
 const Card = (props) => {

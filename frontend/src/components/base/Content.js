@@ -1,9 +1,9 @@
 import React from 'react';
 import { MDBRow } from 'mdbreact';
 
-import Card from './Card';
-import Carousel from './Carousel';
-import Banner from './Banner';
+import Card from './portfolio/Card';
+import Carousel from './home/Carousel';
+import Banner from './home/Banner';
 import Pagination from './Pagination';
 
 const Content = () => {

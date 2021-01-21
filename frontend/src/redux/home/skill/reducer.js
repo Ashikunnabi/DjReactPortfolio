@@ -13,15 +13,18 @@ export const listOfSkillsReducer = (state = initState, action) => {
         case listSkillsSuccess:
             return { ...state, skills: action.payload }
         case listSkillsFail:
-            return { ...state, skills: [
-                {
-                    "id": 1,
-                    "title": "Python",
-                    "is_fab_icon": true,
-                    "icon": "python",
-                    "button_color": "unique",
-                    "rank": 1
-                }] }
+            return {
+                ...state, skills: [
+                    {
+                        "id": 1,
+                        "title": "Python",
+                        "is_fab_icon": true,
+                        "icon": "python",
+                        "button_color": "unique",
+                        "rank": 1
+                    },
+                ]
+            }
         default:
             return state
     }

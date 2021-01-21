@@ -1,11 +1,11 @@
 import React from "react";
 import Skill from './Skill';
-import '../../assets/base/style.css';
+import '../../../assets/base/style.css';
 import { connect } from 'react-redux';
-import { fetchSkills } from '../../redux/home/skill/action'
+import { fetchSkills } from '../../../redux/home/skill/action'
 
 const Skills = (props) => {
-  const { skills, get_list_of_skills } = props  
+  const { skills, get_list_of_skills } = props
 
   React.useEffect(() => {
     get_list_of_skills()

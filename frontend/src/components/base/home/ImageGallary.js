@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBRow, MDBCol } from "mdbreact";
 import Lightbox from "react-image-lightbox";
-import "../../assets/base/Lightbox.css";
+import "../../../assets/base/Lightbox.css";
 
 class ImageGallary extends React.Component {
 state = {

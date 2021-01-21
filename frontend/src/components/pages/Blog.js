@@ -1,7 +1,7 @@
 import React from 'react';
 import { MDBContainer, MDBRow } from 'mdbreact';
 
-import { CardImageLeft, CardImageRight } from '../base/';
+import { CardImageLeft, CardImageRight } from '../base/blog/';
 
 const Blog = () => {
   const [blogs, setBlogs] = React.useState([]);
