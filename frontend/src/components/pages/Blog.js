@@ -5,7 +5,6 @@ import { CardImageLeft, CardImageRight } from '../base/';
 
 const Blog = () => {
   const [blogs, setBlogs] = React.useState([]);
-  const storeData = [];
 
   React.useEffect(() => {
     fetch('https://ademo.pythonanywhere.com/project/api/v1/blogs/')

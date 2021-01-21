@@ -1,0 +1,1 @@
+export const api_endpoint = 'https://ademo.pythonanywhere.com/project/api/v1/'

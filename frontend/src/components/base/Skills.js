@@ -1,29 +1,34 @@
 import React from "react";
 import Skill from './Skill';
-
 import '../../assets/base/style.css';
+import { connect } from 'react-redux';
+import { fetchSkills } from '../../redux/home/skill/action'
 
-const Skills = () => {
-  const [skills, setskills] = React.useState([]);
-  
+const Skills = (props) => {
+  const { skills, get_list_of_skills } = props  
+
   React.useEffect(() => {
-    fetch('https://ademo.pythonanywhere.com/project/api/v1/skills/')
-      .then(res => res.json())
-      .then(data => {
-        let tmpArray = []
-        for (var i = 0; i < data.length; i++) {
-            tmpArray.push(data[i])
-        }
-        setskills(tmpArray);
-      });
+    get_list_of_skills()
   }, []); // <-- Have to pass i
-  
+
   return (
-      <div className="Skills__div">
-        <h1 className="Skills__h1">SKILLS</h1>
-        {!skills ? console.log(skills) : skills.map(x => <Skill key={x.id} obj={x} />)}        
-      </div>
+    <div className="Skills__div">
+      <h1 className="Skills__h1">SKILLS</h1>
+      {!skills ? console.log(skills) : skills.map(x => <Skill key={x.id} obj={x} />)}
+    </div>
   );
 }
 
-export default Skills;
+const mapStateToProps = (state) => {
+  return {
+    skills: state.listOfSkillsReducer.skills
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    get_list_of_skills: () => { dispatch(fetchSkills()) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Skills);
