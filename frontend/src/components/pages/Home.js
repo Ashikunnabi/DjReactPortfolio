@@ -11,7 +11,7 @@ const Content = () => {
         <MDBRow style={{ marginTop: '15px' }}>
           <Banner />
         </MDBRow>
-        <MDBRow>
+        <MDBRow id="skills">
           <Skills />
         </MDBRow>
         <MDBRow>

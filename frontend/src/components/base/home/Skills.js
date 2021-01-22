@@ -5,23 +5,55 @@ import { connect } from 'react-redux';
 import { fetchSkills } from '../../../redux/home/skill/action'
 
 const Skills = (props) => {
-  const { skills, get_list_of_skills } = props
+  const { data_skills, get_list_of_skills } = props
+  const { skills, error, status } = data_skills
+
 
   React.useEffect(() => {
     get_list_of_skills()
-  }, []); // <-- Have to pass i
+  }, []);
 
-  return (
-    <div className="Skills__div">
-      <h1 className="Skills__h1">SKILLS</h1>
-      {!skills ? console.log(skills) : skills.map(x => <Skill key={x.id} obj={x} />)}
-    </div>
-  );
+
+  if (status == 'progress') {
+    return (
+      <div className="Skills__div">
+        <h1 className="Skills__h1">SKILLS</h1>  
+      <img
+        src={require('../../../assets/base/loading1.gif')} 
+        className="img-fluid shadow-box-example z-depth-1" 
+        alt="loading" 
+        width="100%"
+        style={{ height:'10em' }}
+      />
+      </div>
+    );
+  } 
+
+
+  else if (status == 'success') {
+    return (
+      <div className="Skills__div">
+        <h1 className="Skills__h1">SKILLS</h1>
+        {!skills && skills.map(x => <Skill key={x.id} obj={x} />)}
+      </div>
+    );
+  }
+
+
+  else if (status == 'failed') {
+    return (
+      <div className="Skills__div">
+        <h1 className="Skills__h1">SKILLS</h1>
+        <p className="text-center">Something went wrong!</p>
+      </div>
+    );
+  }
+  
 }
 
 const mapStateToProps = (state) => {
   return {
-    skills: state.listOfSkillsReducer.skills
+    data_skills: state.listOfSkillsReducer
   }
 }
 

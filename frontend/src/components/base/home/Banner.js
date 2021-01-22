@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 const Banner = () => {
   return (
     <>
@@ -12,5 +14,6 @@ const Banner = () => {
     </>
   )
 }
+
 
 export default Banner;

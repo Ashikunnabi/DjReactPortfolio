@@ -21,6 +21,9 @@
 .btn {
     height: 46px;
 }
+#skills {
+    display: block;
+}
 .Skills__div {
     /* height:100px; */
     /* width:100px; */
