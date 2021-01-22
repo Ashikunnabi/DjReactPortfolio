@@ -1,80 +1,78 @@
 import React from "react";
 import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask } from
-"mdbreact";
+  "mdbreact";
+import { connect } from 'react-redux'
+import { fetchImageApiCall } from '../../../redux/home/carousel/action'
+import CarouselImage from './CarouselImage'
 
-const Carousel = () => {
-  const [images, setImages] = React.useState([]);
-  
+
+const Carousel = (props) => {
+  const { data_images, getCarouselImages } = props
+  const { images, error, status } = data_images
+
+
   React.useEffect(() => {
-    fetch('https://ademo.pythonanywhere.com/project/api/v1/quotes/')
-      .then(res => res.json())
-      .then(data => {
-        let tmpArray = []
-        for (var i = 0; i < data.length; i++) {
-            if (data[i].show_as_carousel) tmpArray.push(data[i])
-        }
-        setImages(tmpArray);
-      });
-  }, []); // <-- Have to pass i
-  
-  return (
+    getCarouselImages()
+  }, []);
+
+
+  if (status == 'progress') {
+    return (
+      <img
+        src={require('../../../assets/base/loading1.gif')}
+        className="img-fluid shadow-box-example z-depth-1"
+        alt="loading"
+        width="100%"
+        style={{ height: '10em' }}
+      />
+    );
+  }
+
+
+  else if (status == 'success') {
+    return (
       <MDBCarousel
-      activeItem={1}
-      length={3}
-      showControls={true}
-      showIndicators={true}
-      className="z-depth-1"
-    >
-      <MDBCarouselInner>
-        <MDBCarouselItem itemId="1">
-          <MDBView>
-            <img
-              className="d-block w-100"
-              src={images[0] && images[0].image}
-              alt="First slide"
-            />
-            {/* <MDBMask overlay="black-light" /> */}
-          <MDBMask overlay="" />
-          </MDBView>
-          {/*<MDBCarouselCaption>
-            <h3 className="h3-responsive">Light mask</h3>
-            <p>First text</p>
-          </MDBCarouselCaption> */}
-        </MDBCarouselItem>
-        <MDBCarouselItem itemId="2">
-          <MDBView>
-            <img
-              className="d-block w-100"
-              src={images[1] && images[1].image}
-              alt="Second slide"
-            />
-          {/* <MDBMask overlay="black-strong" /> */}
-          <MDBMask overlay="" />
-          </MDBView>
-          {/*<MDBCarouselCaption>
-            <h3 className="h3-responsive">Strong mask</h3>
-            <p>Second text</p>
-          </MDBCarouselCaption> */}
-        </MDBCarouselItem>
-        <MDBCarouselItem itemId="3">
-          <MDBView>
-            <img
-              className="d-block w-100"
-              src={images[2] && images[2].image}
-              alt="Third slide"
-            />
-          {/* <MDBMask overlay="black-slight" /> */}
-          <MDBMask overlay="" />
-          </MDBView>
-          {/*<MDBCarouselCaption>
-            <h3 className="h3-responsive">Slight Mast</h3>
-            <p>Third text</p>
-          </MDBCarouselCaption> */}
-        </MDBCarouselItem>
-      </MDBCarouselInner>
-    </MDBCarousel>
-    // </MDBContainer>
-  );
+        activeItem={1}
+        length={images.length}
+        showControls={true}
+        showIndicators={true}
+        className="z-depth-1"
+      >
+        <MDBCarouselInner>
+          {images && images.map(x => <CarouselImage key={x.id} image={x} />)}
+        </MDBCarouselInner>
+      </MDBCarousel>
+    );
+  }
+
+
+  else if (status == 'failed') {
+    return (
+      <MDBCarousel
+        activeItem={1}
+        length={images.length}
+        showControls={true}
+        showIndicators={true}
+        className="z-depth-1"
+      >
+        <MDBCarouselInner>
+          <p className="text-center">Something went wrong!</p>
+        </MDBCarouselInner>
+      </MDBCarousel>
+    );
+  }
 }
 
-export default Carousel;
+const mapStateToProps = (state) => {
+  return {
+    data_images: state.carouselImageReducer
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getCarouselImages: () => dispatch(fetchImageApiCall())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Carousel);
