@@ -34,7 +34,7 @@ const Skills = (props) => {
     return (
       <div className="Skills__div">
         <h1 className="Skills__h1">SKILLS</h1>
-        {!skills && skills.map(x => <Skill key={x.id} obj={x} />)}
+        {skills && skills.map(x => <Skill key={x.id} obj={x} />)}
       </div>
     );
   }
