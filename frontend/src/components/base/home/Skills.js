@@ -9,9 +9,7 @@ const Skills = (props) => {
   const { skills, status } = data_skills
 
 
-  React.useEffect(() => {
-    get_list_of_skills()
-  }, []);
+  React.useEffect(get_list_of_skills, []);
 
 
   if (status === 'progress') {

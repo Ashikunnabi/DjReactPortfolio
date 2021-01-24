@@ -10,9 +10,7 @@ const Portfolio = (props) => {
   const [seeDetail, setSeeDetail] = React.useState(null);
   const [showModal, setShowModal] = React.useState(false);
 
-  React.useEffect(() => {
-    get_portfolios()
-  }, [])
+  React.useEffect(get_portfolios, [])
 
   const showMore = () => {
     get_portfolios(nextURL, true)

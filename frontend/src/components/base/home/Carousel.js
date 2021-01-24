@@ -11,9 +11,7 @@ const Carousel = (props) => {
   const { images, status } = data_images
 
 
-  React.useEffect(() => {
-    getCarouselImages()
-  }, []);
+  React.useEffect(getCarouselImages, []);
 
 
   if (status === 'progress') {
