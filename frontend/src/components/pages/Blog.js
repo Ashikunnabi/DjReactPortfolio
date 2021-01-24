@@ -1,18 +1,14 @@
 import React from 'react';
 import { MDBContainer, MDBRow } from 'mdbreact';
-
 import { CardImageLeft, CardImageRight } from '../base/blog/';
+import { connect } from 'react-redux';
+import { fetchBlogApiCall } from '../../redux/blog/action'
 
-const Blog = () => {
-  const [blogs, setBlogs] = React.useState([]);
+const Blog = (props) => {
+  const { blogs } = props.data_blogs
+  const { get_blogs } = props
 
-  React.useEffect(() => {
-    fetch('https://ademo.pythonanywhere.com/project/api/v1/blogs/')
-      .then(res => res.json())
-      .then(data => {
-        setBlogs(data);
-      });
-  }, []); // <-- Have to pass i
+  React.useEffect(get_blogs, []);
 
 
   return (
@@ -20,8 +16,7 @@ const Blog = () => {
       <MDBRow style={{ justifyContent: 'center' }}>
 
         {
-          !blogs ?
-            console.log(blogs) :
+          blogs &&
             blogs.map(
               (x, i) => 
                 (i % 2 === 0) ?
@@ -39,4 +34,16 @@ const Blog = () => {
   )
 }
 
-export default Blog;
+const mapStateToProps = (state) => {
+  return {
+    data_blogs: state.blogReducer
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    get_blogs: () => { dispatch(fetchBlogApiCall()) }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);
