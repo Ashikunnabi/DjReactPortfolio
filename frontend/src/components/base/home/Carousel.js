@@ -16,7 +16,7 @@ const Carousel = (props) => {
   }, []);
 
 
-  if (status == 'progress') {
+  if (status === 'progress') {
     return (
       <img
         src={require('../../../assets/base/loading1.gif')}
@@ -29,7 +29,7 @@ const Carousel = (props) => {
   }
 
 
-  else if (status == 'success') {
+  else if (status === 'success') {
     return (
       <MDBCarousel
         activeItem={1}
@@ -46,7 +46,7 @@ const Carousel = (props) => {
   }
 
 
-  else if (status == 'failed') {
+  else if (status === 'failed') {
     return (
       <MDBCarousel
         activeItem={1}

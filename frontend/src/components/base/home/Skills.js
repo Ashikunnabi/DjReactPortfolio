@@ -14,23 +14,23 @@ const Skills = (props) => {
   }, []);
 
 
-  if (status == 'progress') {
+  if (status === 'progress') {
     return (
       <div className="Skills__div">
-        <h1 className="Skills__h1">SKILLS</h1>  
-      <img
-        src={require('../../../assets/base/loading1.gif')} 
-        className="img-fluid shadow-box-example z-depth-1" 
-        alt="loading" 
-        width="100%"
-        style={{ height:'10em' }}
-      />
+        <h1 className="Skills__h1">SKILLS</h1>
+        <img
+          src={require('../../../assets/base/loading1.gif')}
+          className="img-fluid shadow-box-example z-depth-1"
+          alt="loading"
+          width="100%"
+          style={{ height: '10em' }}
+        />
       </div>
     );
-  } 
+  }
 
 
-  else if (status == 'success') {
+  else if (status === 'success') {
     return (
       <div className="Skills__div">
         <h1 className="Skills__h1">SKILLS</h1>
@@ -40,7 +40,7 @@ const Skills = (props) => {
   }
 
 
-  else if (status == 'failed') {
+  else if (status === 'failed') {
     return (
       <div className="Skills__div">
         <h1 className="Skills__h1">SKILLS</h1>
@@ -48,7 +48,7 @@ const Skills = (props) => {
       </div>
     );
   }
-  
+
 }
 
 const mapStateToProps = (state) => {
