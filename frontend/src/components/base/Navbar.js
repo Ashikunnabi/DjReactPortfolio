@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse } from "mdbreact";
 import { Route } from 'react-router-dom';
 
-import { Home, Portfolio, Blog } from '../pages/';
+import { Home, Portfolio, Blog, JsGame } from '../pages/';
 
 class Navbar extends Component {
     state = {
@@ -31,6 +31,9 @@ class Navbar extends Component {
                 </MDBNavItem>
                 <MDBNavItem>
                   <MDBNavLink exact to="/blog" activeClassName="navbar_active">Blog</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink exact to="/js-game" activeClassName="navbar_active">Play</MDBNavLink>
                 </MDBNavItem>
                 {/*<MDBNavItem>
                   <MDBNavLink to="/blog"activeClassName="navbar_active">Blog</MDBNavLink>
@@ -78,8 +81,9 @@ class Navbar extends Component {
           </MDBNavbar>
           
           <Route exact path="/" component={Home} />
-          <Route exact path="/Portfolio" component={Portfolio} />
-          <Route exact path="/Blog" component={Blog} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/js-game" component={JsGame} />
         </>
         );
       }
