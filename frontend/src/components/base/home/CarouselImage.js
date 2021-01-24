@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask } from
+import { MDBCarouselItem, MDBView, MDBMask } from
   "mdbreact";
 
 const CarouselImage = ({image}) => {

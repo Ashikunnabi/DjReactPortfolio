@@ -6,7 +6,7 @@ import { fetchSkills } from '../../../redux/home/skill/action'
 
 const Skills = (props) => {
   const { data_skills, get_list_of_skills } = props
-  const { skills, error, status } = data_skills
+  const { skills, status } = data_skills
 
 
   React.useEffect(() => {

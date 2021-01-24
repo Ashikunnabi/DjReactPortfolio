@@ -1,5 +1,5 @@
 import React from "react";
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask } from
+import { MDBCarousel, MDBCarouselInner } from
   "mdbreact";
 import { connect } from 'react-redux'
 import { fetchImageApiCall } from '../../../redux/home/carousel/action'
@@ -8,7 +8,7 @@ import CarouselImage from './CarouselImage'
 
 const Carousel = (props) => {
   const { data_images, getCarouselImages } = props
-  const { images, error, status } = data_images
+  const { images, status } = data_images
 
 
   React.useEffect(() => {
