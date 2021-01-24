@@ -16,7 +16,7 @@ export const fetchImageGalleryApiCall = () => {
         .then(res => res.json())
         .then(data => {
             for (var i = 0; i < data.length; i++) {
-                if (!data[i].show_as_carousel) tmpArray.push(data[i])
+                if (!data[i].show_as_carousel) tmpArray.push(data[i].image)
             }
             dispatch(fetchImageGallerySuccess(tmpArray))
         }).catch((data) => {

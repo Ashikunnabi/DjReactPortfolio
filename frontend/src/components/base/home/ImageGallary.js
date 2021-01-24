@@ -16,10 +16,10 @@ class ImageGallary extends React.Component {
 
     return images.map((imageSrc, i) => {
       return (
-        <MDBCol md="4" key={i + 1}>
+        <MDBCol md="4" key={i}>
           <figure>
             <img src={imageSrc} alt="Gallery" className="img-fluid" onClick={() =>
-              this.props.viewImage({ photoIndex: i + 1, isOpen: true })
+              this.props.viewImage({ photoIndex: i, isOpen: true })
             }
             />
           </figure>
@@ -59,13 +59,15 @@ class ImageGallary extends React.Component {
               imageTitle={photoIndex + 1 + "/" + images.length}
               onCloseRequest={() => this.props.closeImage()}
               onMovePrevRequest={() =>
-                this.setState({
-                  photoIndex: (photoIndex + images.length - 1) % images.length
+                this.props.viewImage({ 
+                  photoIndex: (photoIndex + images.length - 1) % images.length, 
+                  isOpen: true 
                 })
               }
               onMoveNextRequest={() =>
-                this.setState({
-                  photoIndex: (photoIndex + 1) % images.length
+                this.props.viewImage({ 
+                  photoIndex: (photoIndex + 1) % images.length, 
+                  isOpen: true 
                 })
               }
             />
