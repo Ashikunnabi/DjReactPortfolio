@@ -28,7 +28,7 @@ const Blog = (props) => {
 
   if (status === 'success') {
     return (
-      <div className="container-fluid Home__background_image">
+      <div className="container-fluid bg-white">
       <MDBContainer >
         <MDBRow style={{ justifyContent: 'center' }}>
 

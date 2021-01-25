@@ -2,9 +2,9 @@ import React from "react";
 import { MDBCarouselItem, MDBView, MDBMask } from
   "mdbreact";
 
-const CarouselImage = ({image}) => {
+const CarouselImage = ({itemId, image}) => {
   return (
-    <MDBCarouselItem itemId={ image.id}>
+    <MDBCarouselItem itemId={ itemId }>
       <MDBView>
         <img
           className="d-block w-100"

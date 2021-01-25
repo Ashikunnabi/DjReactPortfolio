@@ -37,7 +37,7 @@ const Carousel = (props) => {
         className="z-depth-1"
       >
         <MDBCarouselInner>
-          {images && images.map(x => <CarouselImage key={x.id} image={x} />)}
+          {images && images.map((x, i) => <CarouselImage key={i} itemId={i + 1} image={x} />)}
         </MDBCarouselInner>
       </MDBCarousel>
     );
