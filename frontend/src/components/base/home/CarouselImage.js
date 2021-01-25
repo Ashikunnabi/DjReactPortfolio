@@ -2,14 +2,15 @@ import React from "react";
 import { MDBCarouselItem, MDBView, MDBMask } from
   "mdbreact";
 
-const CarouselImage = ({itemId, image}) => {
+const CarouselImage = ({ itemId, image }) => {
   return (
-    <MDBCarouselItem itemId={ itemId }>
+    <MDBCarouselItem itemId={itemId}>
       <MDBView>
         <img
           className="d-block w-100"
           src={image.source}
           alt="First slide"
+          height="600px!important"
         />
         {/* <MDBMask overlay="black-light" /> */}
         <MDBMask overlay="" />
