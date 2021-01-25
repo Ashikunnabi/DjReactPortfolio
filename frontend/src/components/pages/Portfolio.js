@@ -23,6 +23,7 @@ const Portfolio = (props) => {
   const toggle = () => {
     setShowModal(!showModal)
   }
+  
   if (status === 'progress') {
     return (
       <Fragment >
