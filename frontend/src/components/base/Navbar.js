@@ -32,9 +32,6 @@ class Navbar extends Component {
                 <MDBNavItem>
                   <MDBNavLink exact to="/blog" activeClassName="navbar_active">Blog</MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem>
-                  <MDBNavLink exact to="/covid" activeClassName="navbar_active">Covid19 Update</MDBNavLink>
-                </MDBNavItem>
                 {/*<MDBNavItem>
                   <MDBNavLink to="/blog"activeClassName="navbar_active">Blog</MDBNavLink>
                 </MDBNavItem>
@@ -76,6 +73,11 @@ class Navbar extends Component {
                     </MDBDropdownMenu>
                   </MDBDropdown>
                 </MDBNavItem>*/}
+              </MDBNavbarNav>
+              <MDBNavbarNav right>
+                <MDBNavItem>
+                  <MDBNavLink exact to="/covid" activeClassName="navbar_active">Covid19 Update</MDBNavLink>
+                </MDBNavItem>
               </MDBNavbarNav>
             </MDBCollapse>
           </MDBNavbar>
