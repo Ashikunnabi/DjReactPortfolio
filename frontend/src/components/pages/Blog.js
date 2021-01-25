@@ -28,6 +28,7 @@ const Blog = (props) => {
 
   if (status === 'success') {
     return (
+      <div className="container-fluid Home__background_image">
       <MDBContainer >
         <MDBRow style={{ justifyContent: 'center' }}>
 
@@ -46,17 +47,15 @@ const Blog = (props) => {
           <CardImageRight />   
           <CardImageLeft />    */}
         </MDBRow>
-      </MDBContainer>
+      </MDBContainer></div>
     )
   }
 
   if (status === 'failed') {
     return (
-      <MDBContainer >
         <div className="container-fluid Home__background_image text-center vh-100">
           <p>Something went wrong!</p>
         </div>
-      </MDBContainer>
     )
   }
 }
