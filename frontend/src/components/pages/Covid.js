@@ -79,7 +79,7 @@ const Covid = () => {
   }
 
   return (
-    <div className="app Home__background_image">
+    <div className="app bg-white">
       <div className="app__left">
         <div className="app__header">
           <h1>COVID-19 Tracker</h1>

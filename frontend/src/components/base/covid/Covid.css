@@ -54,7 +54,3 @@ body {
     flex-direction: column;
   }
 }
-
-.Home__background_image {
-  background-image: url("../../../assets/base/background2.png");
-}
